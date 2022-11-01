@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 6fr 0.5fr;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.mainList {
+  grid-column: -3/-2;
+}
+
+.nav {
+  text-align: center;
+}
+
+.defaultList,
+.projectsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content {
+    grid-column: 2/3;
+}
+
+.footer {
+  grid-column: -3/-1;
+}
