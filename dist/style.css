@@ -12,16 +12,40 @@ body {
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 6fr 0.5fr;
   height: 100vh;
+  background-color: #61764b;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: inherit;
+  width: 50%;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #fad6a5;
 }
 
 .header {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 20px;
+  font-family: "Annie Use Your Telescope", sans-serif;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .mainList {
   grid-column: -3/-2;
+  background-color: #9ba17b;
 }
 
 .nav {
@@ -30,15 +54,36 @@ body {
 
 .defaultList,
 .projectsList {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.defaultList {
+  padding-bottom: 20px;
 }
 
 .content {
-    grid-column: 2/3;
+  grid-column: 2/3;
+  background-color: #cfb997;
 }
 
 .footer {
   grid-column: -3/-1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg);
+}
+
+.fa-github {
+  color: white;
+  transition: transform 0.3s ease-in-out;
 }
