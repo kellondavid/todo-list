@@ -16,7 +16,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-button {
+.listBtn {
   border: none;
   color: inherit;
   font-family: inherit;
@@ -25,11 +25,11 @@ button {
   cursor: pointer;
   border-radius: 5px;
   background-color: inherit;
-  width: 50%;
-  align-self: center;
+  width: 100%;
+  text-align: left;
 }
 
-button:hover {
+.listBtn:hover {
   background-color: #fad6a5;
 }
 
@@ -49,7 +49,9 @@ button:hover {
 }
 
 .nav {
-  text-align: center;
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .defaultList,
