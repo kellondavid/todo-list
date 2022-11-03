@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("yyyy")})();
+(()=>{"use strict";function e(){const e=document.querySelector(".addTaskInputs"),t=document.createElement("form");t.setAttribute("type","text"),t.setAttribute("placeholder","task"),e.appendChild(t)}document.querySelector(".home").addEventListener("click",(function(){const e=document.querySelector(".tasks"),t=document.createElement("h1");t.textContent="test",e.appendChild(t)})),document.querySelector(".addTaskBtn").addEventListener("click",e),e()})();

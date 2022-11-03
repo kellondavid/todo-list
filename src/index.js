@@ -1,3 +1,14 @@
-import addTask from "./task"
+import { addTask } from "./task";
+import { uiFunctions, displayInputs } from "./ui";
 
-console.log("yyyy")
+function navigateTabs() {
+  const homeBtn = document.querySelector(".home");
+  homeBtn.addEventListener("click", uiFunctions);
+
+  const addTaskBtn = document.querySelector(".addTaskBtn");
+  addTaskBtn.addEventListener("click", displayInputs)
+}
+
+
+navigateTabs();
+displayInputs();
