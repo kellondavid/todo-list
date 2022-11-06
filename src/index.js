@@ -1,14 +1,70 @@
-import { addTask } from "./task";
-import { uiFunctions, displayInputs } from "./ui";
+import { Task } from "./task";
+import { uiFunctions } from "./ui";
+
+//globals
+let taskList = [
+  {
+    title: "test",
+    date: 07/12/2022,
+  },
+];
+
+//static property
+Task.id = 0;
 
 function navigateTabs() {
   const homeBtn = document.querySelector(".home");
   homeBtn.addEventListener("click", uiFunctions);
-
-  const addTaskBtn = document.querySelector(".addTaskBtn");
-  addTaskBtn.addEventListener("click", displayInputs)
 }
 
-
 navigateTabs();
-displayInputs();
+
+function addTaskToList() {
+  let a = document.getElementById("title").value;
+  let b = document.getElementById("date").value;
+
+  if (a !== "" && b !== "") {
+    taskList.push(new Task(a, b));
+  }
+  const submitBtn = document.getElementById("addTaskInputs");
+  submitBtn.addEventListener("submit", () => {
+    addTaskToList();
+    event.preventDefault();
+    submitBtn.reset();
+    displayTasks();
+  });
+}
+
+//displays each task into cards
+function displayTasks() {
+  const currentDisplay = document.querySelector(".taskDisplay");
+  currentDisplay.textContent = "";
+
+  taskList.forEach((taskList) => {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.classList.add(`${taskList.taskId}`);
+    currentDisplay.appendChild(card);
+
+    for (let key in taskList) {
+      const text = document.createElement("p");
+      text.textContent = `${key}: ${taskList[key]}`;
+      card.appendChild(text);
+    }
+
+    const remBtn = document.createElement("button");
+    card.appendChild(remBtn);
+    remBtn.textContent = "Complete";
+    remBtn.onclick = remTask;
+  });
+}
+//deletes task
+function remTask() {
+  const taskID = this.parentElement.classList[1];
+
+  const findTask = taskList.findIndex((element) => element.taskId === taskId);
+  const delTask = taskList.splice(findTask, 1);
+  this.parentElement.remove();
+}
+
+displayTasks();

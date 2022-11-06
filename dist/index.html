@@ -27,11 +27,12 @@
       </div>
     </div>
     <div class="content">
-      <div class="addTaskInputs">
-        <input type="text" id="taskForm" name="name" required>
-        <button class="addTaskBtn">Add Task</button>
-      </div>
-      <div class="tasks"></div>
+      <form id="addTaskInputs" action="">
+        <input type="text" id="taskForm" name="title" required>
+        <input type="date" id="date" name="date">
+        <input type="submit" class="addTaskBtn" value="Add Task" />
+      </form>
+      <div class="taskDisplay"></div>
     </div>
     <div class="footer"><p class="signature">Copyright © <script>document.write(new Date().getFullYear());</script> kellondavid <a href="https://github.com/kellondavid"><i class="fa-brands fa-github"></i></p></a>
     </div></div>
