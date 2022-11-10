@@ -71,6 +71,10 @@ body {
   background-color: #cfb997;
 }
 
+.card {
+  background-color: white;
+}
+
 .footer {
   grid-column: -3/-1;
   text-align: center;

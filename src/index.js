@@ -4,8 +4,8 @@ import { uiFunctions } from "./ui";
 //globals
 let taskList = [
   {
-    title: "test",
-    date: 07/12/2022,
+    title: "testing",
+    date: "07/20/2022",
   },
 ];
 
@@ -20,8 +20,8 @@ function navigateTabs() {
 navigateTabs();
 
 function addTaskToList() {
-  let a = document.getElementById("title").value;
-  let b = document.getElementById("date").value;
+  let a = document.getElementById("taskTitle").value;
+  let b = document.getElementById("taskDate").value;
 
   if (a !== "" && b !== "") {
     taskList.push(new Task(a, b));
@@ -60,7 +60,7 @@ function displayTasks() {
 }
 //deletes task
 function remTask() {
-  const taskID = this.parentElement.classList[1];
+  const taskId = this.parentElement.classList[1];
 
   const findTask = taskList.findIndex((element) => element.taskId === taskId);
   const delTask = taskList.splice(findTask, 1);
